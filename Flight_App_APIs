@@ -1,0 +1,92 @@
+Flight App APIs:
+================
+
+1.Add Flight Record: 
+
+API end point : api/flights
+
+http://localhost:8080/api/flights
+
+HTTP Command: POST
+
+Request:
+JSON BODY:
+{
+  "id": 1,
+  "flightCode": "SPJ021",
+  "airlineName": "Spice Jet",
+  "source": "GOA",
+  "destination": "Bangalore",
+  "fare": 4700.10,
+  "duration": "1h 30m"
+}
+Response: Status: 200 OK
+
+================================
+
+2.Select All Flight Records: 
+
+http://localhost:8080/api/flights
+API end point : api/flights
+HTTP Command: GET
+
+Response : Status: 200 OK 
+it will list all records.
+
+
+================================
+3.Select By Flight id:
+
+http://localhost:8080/api/flights/1
+API end point : api/flights
+HTTP Command: GET
+
+Response : Status: 200 OK 
+it will list record with id = 1  
+{
+  "airlineName": "Air India",
+  "destination": "Delhi",
+  "duration": "2h 30m",
+  "fare": 5500,
+  "flightCode": "AI101",
+  "id": 1,
+  "source": "Bangalore"
+}
+==================================
+3.Update By Flight id:
+
+http://localhost:8080/api/flights/1
+API end point : api/flights
+HTTP Command: PUT
+----------------
+JSON BODY:
+{
+  "id": 1,
+  "flightCode": "SPJ021",
+  "airlineName": "Spice Jet",
+  "source": "Patna",
+  "destination": "Bangalore",
+  "fare": 4700.10,
+  "duration": "1h 30m"
+}
+--------------
+Response : Status: 200 OK 
+{
+  "airlineName": "Air India",
+  "destination": "Patna",
+  "duration": "2h 30m",
+  "fare": 5500,
+  "flightCode": "AI101",
+  "id": 1,
+  "source": "Bangalore"
+}
+====================================
+
+4.Delete By Flight id:
+http://localhost:8080/api/flights/3
+
+Deletes record with id =3 
+
+Response : Status: 200 OK 
+Flight Deleted Successfully!
+====================================
